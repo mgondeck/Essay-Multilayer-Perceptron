@@ -1,0 +1,168 @@
+\usepackage[onehalfspacing]{setspace}
+\usepackage[top=3.2cm]{geometry}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{diagbox} %for diagonale table box
+\usepackage{wasysym}
+\usepackage{textcomp}
+\usepackage{sistyle} %for pretty number displaying
+\usepackage{enumitem} 
+\usepackage[style=numeric,sorting=none,backend=bibtex]{biblatex}
+\usepackage{multicol}
+\usepackage[section]{placeins}
+\usepackage{lipsum}
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage[version=3]{mhchem} 
+\parskip=0.1in 
+\usepackage{cancel} 
+\usepackage{parskip} 
+\newcommand{\ts}{\textsuperscript} %th im datum
+
+%für die Confusion Matrix
+\usepackage{array}
+\newcommand\MyBox[2]{
+  \fbox{\lower0.75cm
+    \vbox to 1.7cm{\vfil
+      \hbox to 1.7cm{\hfil\parbox{1.4cm}{#1\\#2}\hfil}
+      \vfil}%
+  }%
+}
+
+% Standard Packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}	
+\usepackage{subfigure}      
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+
+%zusätzliche Schriftzeichen
+\usepackage{amsmath, amsfonts, amssymb, latexsym}
+% nicht einrücken nach dem Absatz
+\setlength\parindent{0pt} %set indent
+\setlength{\parskip}{10pt} %space between paragraphs
+\usepackage{svg}    %Vektorgrafiken
+\usepackage{biblatex} % Aussehen des Literaturverzeichnisses wenn du willst
+\usepackage{csquotes} %irgendwie erforderlich für biblatex damit die deutschen quotes gut aussehen
+
+
+% Für die Aktivierungsfunktionen
+\usepackage{pgfplots} % for plotting functions 
+\pgfplotsset{compat=1.8}
+\pgfplotsset{every axis/.append style={tick label style={/pgf/number format/fixed},font=\scriptsize,ylabel near ticks,xlabel near ticks,grid=major}}
+
+% Grafiken zeichnen
+\usepackage{tikz}
+    \usetikzlibrary{positioning}
+    \usetikzlibrary{matrix}
+    \usetikzlibrary{backgrounds}
+    \usetikzlibrary{decorations.pathreplacing}
+    \usetikzlibrary{fadings}
+
+%%%%%%%%% ZITATION UND VERWEISE %%%%%%%%%%
+\usepackage[colorlinks=true,urlcolor=black,linktocpage]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=black,
+    citecolor=blue
+}
+
+%%%% FOR THE SOURCECODE LAYOUT %%%%%%
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.98,0.98,0.98}
+
+\lstset{frame=tb, 
+        numbers=left, 
+        numberstyle=\tiny, 
+        numbersep=5pt,
+        basicstyle=\footnotesize\ttfamily,
+        breaklines=true,
+        backgroundcolor=\color{backcolour},   
+        commentstyle=\color{codegreen},
+        keywordstyle=\color{leuphy},
+        numberstyle=\tiny\color{codegray},
+        stringstyle=\color{codepurple}
+}
+% % %\lstset{framextopmargin=50pt,frame=bottomline} %add if you want a bottomline 
+
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+
+\definecolor{leuphy}{RGB}{102,0,64} %Leuphana Farbe
+
+
+\usepackage{caption}
+\newcommand\fnote[1]{\captionsetup{font=footnotesize}\caption*{#1}}
+%\newcommand\fnote[1]{\captionsetup{font=scriptsize}\caption*{#1}}
+
+\newcommand{\clearemptydoublepage}{%                 % new chapters on odd page
+	\newpage{\pagestyle{empty}%
+		\cleardoublepage}}
+
+
+%\usepackage[latin1]{inputenc}
+\usepackage{caption}
+\newcommand*{\h}{\hspace{5pt}}% for indentation
+\newcommand*{\hh}{\h\h}% double indentation
+
+
+\usepackage[capitalise, nameinlink]{cleveref} % for including the word "Figure" in the reference needs to be placed after hyperref package
+%\usepackage[noabbrev]{cleveref} %in case of no abbreviation wanted
+\crefname{appsec}{Appendix}{Appendices}
+\crefname{appchap}{Appendix}{Appendices}
+
+\urlstyle{same}
+
+
+%packages for nomenclatures and list of abbreviations
+\usepackage{nomencl}
+\makenomenclature
+
+%% This removes the main title:
+\renewcommand{\nomname}{}
+%% this modifies item separation:
+\setlength{\nomitemsep}{8pt}
+%% this part defines the groups:
+%----------------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+  \item[\Large\bfseries
+  \ifstrequal{#1}{N}{Nomenclature}{%
+  \ifstrequal{#1}{A}{List of Abbreviations}{}}%
+]\vspace{10pt}} % this is to add vertical space between the groups.
+%----------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kopf- und Fußzeile 
+\pagestyle{fancy}
+%
+%\fancyfoot[RE,LO]{}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize \thepage} 
+\renewcommand{\footrulewidth}{0.4pt} %thickness of the decorative lines on the footer
+
+%header for the pages that start a chapter, also for the TOC
+\fancypagestyle{plain}{
+%	\fancyhead[LE,RO]{}
+%	\fancyhead[LO,RE]{}
+%	\renewcommand{\headrulewidth}{0pt} %thickness of the decorative lines on the header
+	}
+%
+%Headers for the other pages
+\pagestyle{fancy}{
+\fancyhead[LE,RO]{\slshape \rightmark} %\rightmark = represent section heading
+\fancyhead[LO,RE]{\slshape} %\leftmark = represent chapter heading
+}
+
+\usepackage{tabularx} %autowrap wide tables
